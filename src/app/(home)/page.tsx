@@ -12,12 +12,12 @@ export default function HomePage() {
           </svg>
         </div>
         
-        <h1 className="text-4xl font-bold text-[var(--foreground)] mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4">
           Aprenda a identificar
           <span className="text-blue-600 dark:text-blue-400"> ataques de phishing</span>
         </h1>
         
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+        <p className="text-xl text-[var(--text-muted)] max-w-2xl mx-auto mb-8">
           Plataforma interativa de conscientização sobre phishing em ambientes corporativos. 
           Pratique com simulações realistas e aprenda a proteger você e sua organização.
         </p>
@@ -38,7 +38,7 @@ export default function HomePage() {
 
       {/* How it works */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
+        <h2 className="text-2xl font-bold text-[var(--foreground)] text-center mb-8">
           Como funciona?
         </h2>
         
@@ -48,8 +48,8 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-xl font-bold text-blue-600 dark:text-blue-400">1</span>
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Escolha um módulo</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <h3 className="font-semibold text-[var(--foreground)] mb-2">Escolha um módulo</h3>
+              <p className="text-[var(--text-muted)] text-sm">
                 Selecione entre E-mail Corporativo ou SMS/WhatsApp para iniciar seu treinamento.
               </p>
             </CardContent>
@@ -60,8 +60,8 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-xl font-bold text-blue-600 dark:text-blue-400">2</span>
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Analise a simulação</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <h3 className="font-semibold text-[var(--foreground)] mb-2">Analise a simulação</h3>
+              <p className="text-[var(--text-muted)] text-sm">
                 Examine mensagens realistas e decida se são tentativas de phishing ou comunicações legítimas.
               </p>
             </CardContent>
@@ -72,8 +72,8 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-xl font-bold text-blue-600 dark:text-blue-400">3</span>
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Aprenda com o feedback</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <h3 className="font-semibold text-[var(--foreground)] mb-2">Aprenda com o feedback</h3>
+              <p className="text-[var(--text-muted)] text-sm">
                 Receba análise detalhada dos indicadores e fundamentação teórica para cada cenário.
               </p>
             </CardContent>
@@ -82,7 +82,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-blue-600 dark:bg-blue-700 rounded-2xl p-8 mb-16 text-white">
+      <section className="bg-blue-600 rounded-2xl p-8 mb-16 text-white">
         <div className="grid md:grid-cols-3 gap-8 text-center">
           <div>
             <p className="text-4xl font-bold mb-2">40%</p>
@@ -107,18 +107,18 @@ export default function HomePage() {
 
       {/* Why it matters */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
+        <h2 className="text-2xl font-bold text-[var(--foreground)] text-center mb-8">
           Por que isso importa?
         </h2>
         
         <Card variant="elevated" padding="lg">
           <CardContent>
-            <blockquote className="text-lg text-gray-700 dark:text-gray-300 italic text-center max-w-3xl mx-auto">
+            <blockquote className="text-lg text-[var(--text-muted)] italic text-center max-w-3xl mx-auto">
               "Todos os firewalls e protocolos de criptografia do mundo nunca serão suficientes 
               para deter um hacker decidido a atacar um banco de dados corporativo ou um empregado 
               determinado a prejudicar um sistema."
             </blockquote>
-            <p className="text-center mt-4 text-gray-500 dark:text-gray-400">
+            <p className="text-center mt-4 text-[var(--text-secondary)]">
               — Kevin Mitnick, "A Arte de Enganar" (2003)
             </p>
           </CardContent>
@@ -127,10 +127,10 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="text-2xl font-bold text-[var(--foreground)] mb-4">
           Pronto para começar?
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
+        <p className="text-[var(--text-muted)] mb-6">
           Desenvolva habilidades práticas de identificação de phishing em um ambiente seguro.
         </p>
         <Link href="/modulos">

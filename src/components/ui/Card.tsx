@@ -12,23 +12,18 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          'rounded-xl',
-          
-          // Variants
+          'rounded-xl transition-colors',
           {
-            'bg-white border border-gray-200': variant === 'default',
-            'bg-transparent border-2 border-gray-300': variant === 'outlined',
-            'bg-white shadow-lg': variant === 'elevated',
+            'bg-[var(--card-bg)] border border-[var(--card-border)]': variant === 'default',
+            'bg-transparent border-2 border-[var(--card-border)]': variant === 'outlined',
+            'bg-[var(--card-bg)] shadow-lg': variant === 'elevated',
           },
-          
-          // Padding
           {
             'p-0': padding === 'none',
             'p-4': padding === 'sm',
             'p-6': padding === 'md',
             'p-8': padding === 'lg',
           },
-          
           className
         )}
         {...props}
@@ -57,7 +52,7 @@ const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingEleme
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn('text-xl font-semibold text-gray-900', className)}
+      className={cn('text-xl font-semibold text-[var(--foreground)]', className)}
       {...props}
     />
   )
@@ -69,7 +64,7 @@ const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLPara
   ({ className, ...props }, ref) => (
     <p
       ref={ref}
-      className={cn('text-gray-600 mt-1', className)}
+      className={cn('text-[var(--text-muted)] mt-1', className)}
       {...props}
     />
   )

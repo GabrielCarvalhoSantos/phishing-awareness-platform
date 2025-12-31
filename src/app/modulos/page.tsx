@@ -36,10 +36,10 @@ export default function ModulosPage() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl font-bold text-[var(--foreground)] mb-4">
           Escolha um Módulo
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-[var(--text-muted)] max-w-2xl mx-auto">
           Selecione o tipo de ataque que deseja aprender a identificar. 
           Cada módulo contém cenários realistas baseados em casos documentados.
         </p>
@@ -57,7 +57,9 @@ export default function ModulosPage() {
                 <div className="flex items-start gap-4">
                   <div className={`
                     w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0
-                    ${module.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-green-100 text-green-600'}
+                    ${module.color === 'blue' 
+                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
+                      : 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'}
                     group-hover:scale-110 transition-transform duration-300
                   `}>
                     {module.icon}
@@ -73,10 +75,12 @@ export default function ModulosPage() {
                     </CardHeader>
                     
                     <div className="mt-4 flex items-center justify-between">
-                      <span className="text-sm text-gray-500">{module.stats}</span>
+                      <span className="text-sm text-[var(--text-secondary)]">{module.stats}</span>
                       <span className={`
                         text-sm font-medium flex items-center gap-1
-                        ${module.color === 'blue' ? 'text-blue-600' : 'text-green-600'}
+                        ${module.color === 'blue' 
+                          ? 'text-blue-600 dark:text-blue-400' 
+                          : 'text-green-600 dark:text-green-400'}
                       `}>
                         Iniciar
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,17 +97,17 @@ export default function ModulosPage() {
       </div>
 
       {/* Info Section */}
-      <Card className="bg-amber-50 border-amber-200">
+      <Card className="bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700">
         <CardContent className="p-6">
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/50 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
-              <h3 className="font-semibold text-amber-900 mb-1">Dica</h3>
-              <p className="text-amber-800 text-sm">
+              <h3 className="font-semibold text-amber-900 dark:text-amber-200 mb-1">Dica</h3>
+              <p className="text-amber-800 dark:text-amber-300 text-sm">
                 Você pode fazer os módulos em qualquer ordem. Cada cenário inclui análise detalhada 
                 conectando a experiência prática com os conceitos teóricos de engenharia social.
               </p>

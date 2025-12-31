@@ -1,8 +1,8 @@
+import React from 'react';
 import { Card, CardContent } from '@/components/ui';
 import { bestPractices } from '@/data';
 
 export default function GuiaPage() {
-  // Agrupar por categoria
   const categorizedPractices = bestPractices.reduce((acc, practice) => {
     if (!acc[practice.category]) {
       acc[practice.category] = [];
@@ -11,7 +11,7 @@ export default function GuiaPage() {
     return acc;
   }, {} as Record<string, typeof bestPractices>);
 
-  const iconMap: Record<string, JSX.Element> = {
+  const iconMap: Record<string, React.ReactNode> = {
     mail: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -58,15 +58,15 @@ export default function GuiaPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
+          <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl font-bold text-[var(--foreground)] mb-4">
           Guia de Boas Práticas
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-[var(--text-muted)] max-w-2xl mx-auto">
           Orientações práticas para identificar e se proteger contra ataques de phishing e engenharia social.
         </p>
       </div>
@@ -75,7 +75,7 @@ export default function GuiaPage() {
       <div className="space-y-10">
         {Object.entries(categorizedPractices).map(([category, practices]) => (
           <section key={category}>
-            <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+            <h2 className="text-xl font-bold text-[var(--foreground)] mb-4 pb-2 border-b border-[var(--card-border)]">
               {category}
             </h2>
             
@@ -84,25 +84,25 @@ export default function GuiaPage() {
                 <Card key={practice.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 text-blue-600">
+                      <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0 text-blue-600 dark:text-blue-400">
                         {iconMap[practice.icon] || iconMap.shield}
                       </div>
                       
                       <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900 mb-2">
+                        <h3 className="font-semibold text-[var(--foreground)] mb-2">
                           {practice.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mb-3">
+                        <p className="text-sm text-[var(--text-muted)] mb-3">
                           {practice.description}
                         </p>
                         
                         <ul className="space-y-2">
                           {practice.tips.map((tip, index) => (
                             <li key={index} className="flex items-start gap-2 text-sm">
-                              <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5 text-green-500 dark:text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                               </svg>
-                              <span className="text-gray-700">{tip}</span>
+                              <span className="text-[var(--text-muted)]">{tip}</span>
                             </li>
                           ))}
                         </ul>
@@ -117,12 +117,12 @@ export default function GuiaPage() {
       </div>
 
       {/* Footer CTA */}
-      <Card className="mt-12 bg-blue-50 border-blue-200">
+      <Card className="mt-12 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700">
         <CardContent className="p-6 text-center">
-          <h3 className="font-semibold text-blue-900 mb-2">
+          <h3 className="font-semibold text-blue-900 dark:text-blue-200 mb-2">
             Pratique o que aprendeu!
           </h3>
-          <p className="text-blue-700 text-sm mb-4">
+          <p className="text-blue-700 dark:text-blue-300 text-sm mb-4">
             Aplique estas boas práticas nos cenários de simulação da plataforma.
           </p>
           <a 
